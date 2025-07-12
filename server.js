@@ -77,7 +77,7 @@ app.post('/contato', (req, res) => {
 
 
 app.get("/api/lanches", (req, res) => {
-  const filePath = path.join(__dirname, "data", "lanches.json");
+  const filePath = path.join(__dirname, "public", "data", "lanches.json");
   console.log("Lendo arquivo:", filePath);
 
   fs.readFile(filePath, "utf8", (err, data) => {
@@ -94,6 +94,10 @@ app.get("/api/lanches", (req, res) => {
       res.status(500).send("Erro interno do servidor");
     }
   });
+});
+
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
 app.listen(PORT, () => {
