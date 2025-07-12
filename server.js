@@ -40,6 +40,10 @@ app.get('/sugestao', (req, res) => {
   res.send(html);
 });
 
+app.get('/contato', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'contato.html'));
+});
+
 app.post('/contato', (req, res) => {
   const { nome, email, assunto, mensagem } = req.body;
 
@@ -73,6 +77,3 @@ app.listen(PORT, () => {
   console.log(`Servidor da DevBurger rodando em localhost:${PORT}`);
 });
 
-app.get('/contato', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'contato.html'));
-});
