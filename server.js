@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const fs = require("fs");
 
 const app = express();
 const PORT = 3000;
@@ -71,6 +72,28 @@ app.post('/contato', (req, res) => {
       </body>
     </html>`;
   res.send(html);
+});
+
+
+
+app.get("/api/lanches", (req, res) => {
+  const filePath = path.join(__dirname, "data", "lanches.json");
+  console.log("Lendo arquivo:", filePath);
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Erro ao ler o arquivo lanches.json:", err.message);
+      return res.status(500).send("Erro interno do servidor");
+    }
+
+    try {
+      const lanches = JSON.parse(data);
+      res.json(lanches);
+    } catch (parseError) {
+      console.error("Erro ao parsear lanches.json:", parseError.message);
+      res.status(500).send("Erro interno do servidor");
+    }
+  });
 });
 
 app.listen(PORT, () => {
