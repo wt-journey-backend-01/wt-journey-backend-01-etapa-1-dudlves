@@ -11,19 +11,19 @@ body {
   background-color: #f8f9fa;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 header {
   background-color: #F3E2B8;
   color: black;
   padding: 1rem 0;
 }
 
-header .container {
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -128,7 +128,7 @@ nav a:hover {
   color: #333;
 }
 
-.sugestao > .container > p {
+.sugestao > .header-container > p {
   text-align: center;
   font-size: 1.1rem;
   margin-bottom: 3rem;
@@ -136,9 +136,8 @@ nav a:hover {
 }
 
 .sugestao-form, .contato-form {
-  max-width: 600px;
-  margin: 0 auto;
   background: white;
+
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -149,7 +148,7 @@ nav a:hover {
   background: white;
 }
 
-.contato-form-section .container {
+.contato-form-section .main-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -210,5 +209,62 @@ nav a:hover {
 }
 
 .btn-primary:hover {
-background-color: #C1440E;
+  background-color: #C1440E;
 }
+
+.contato-form{
+    background: white;
+  margin: 0px 200px;
+
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.sugestao-info, .contato-info-display {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.sugestao-info h2, .contato-info-display h2 {
+    color: #C1440E;
+    margin-bottom: 1rem;
+}
+
+.sugestao-info p, .contato-info-display p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.error-page {
+    text-align: center;
+    padding: 4rem 0;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-page h1 {
+    font-size: 3rem;
+    color: #C1440E;
+    margin-bottom: 1rem;
+}
+
+.error-page h2 {
+    font-size: 2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.error-page p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+

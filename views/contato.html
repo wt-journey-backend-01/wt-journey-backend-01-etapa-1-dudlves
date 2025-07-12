@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato - DevBurger</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container ">
+        <h1 class="logo">🍔 DevBurger</h1>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/contato">Contato</a>
+          <a href="/api/lanches" target="_blank">API Lanches</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="contato-hero">
+        <div class="header-container ">
+          <h2>Entre em Contato</h2>
+          <p> Queremos ouvir você! Envie suas dúvidas, sugestões ou feedbacks.</p>
+        </div>
+      </section>
+      <section class="contato-form-section">
+        <div class=".main-container  ">
+          <form action="/contato" method="POST" class="contato-form">
+            <div class="form-group">
+              <label for="nome">Nome completo:</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="assunto">Assunto:</label>
+              <input type="text" id="assunto" name="assunto" placeholder="Assunto da sua mensagem" required />
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem:</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
